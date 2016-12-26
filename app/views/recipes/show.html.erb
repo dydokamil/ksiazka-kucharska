@@ -16,9 +16,28 @@
 
 <p>
 <h2>Steps</h2>
-</p>
+<table>
+  <thead>
+  <tr>
+    <th>Number</th>
+    <th>Instructions</th>
+    <th>Prep time</th>
+    <th>Cook time</th>
+  </tr>
+  </thead>
 
-<%= link_to 'View steps', '#' %> |
+  <tbody>
+  <% @recipe_steps.each do |recipe_step| %>
+      <tr>
+        <td><%= recipe_step.number %></td>
+        <td><%= recipe_step.instructions %></td>
+        <td><%= recipe_step.prep_time %></td>
+        <td><%= recipe_step.cook_time %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

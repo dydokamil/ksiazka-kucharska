@@ -5,11 +5,13 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    @recipe_steps = RecipeStep.where(recipe_id: @recipe)
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @recipe_steps = RecipeStep.where(recipe_id: @recipe)
   end
 
   # GET /recipes/new
@@ -19,6 +21,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    @recipe_steps = RecipeStep.where(recipe_id: @recipe)
   end
 
   # POST /recipes
