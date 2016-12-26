@@ -2,5 +2,11 @@
 
 <%= render 'form', recipe: @recipe %>
 
+<h2>Images</h2>
+<%= link_to 'Edit Images', '#' %><br>
+
+<h2>Steps</h2>
+<%= link_to 'Add step', new_recipe_step_path(:recipe => @recipe) %><br>
+
 <%= link_to 'Show', @recipe %> |
 <%= link_to 'Back', recipes_path %>
