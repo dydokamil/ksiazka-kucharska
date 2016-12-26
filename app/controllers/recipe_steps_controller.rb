@@ -27,8 +27,8 @@ class RecipeStepsController < ApplicationController
   def create
     @recipe_step = RecipeStep.new(recipe_step_params)
     @all_steps = RecipeStep.where(:recipe_id => @recipe_step.recipe_id)
-    @step_count = @all_steps.length
-    @recipe_step.number = @step_count + 1
+    # @step_count = @all_steps.length
+    # @recipe_step.number = @step_count + 1
 
     respond_to do |format|
       if @recipe_step.save
@@ -73,6 +73,6 @@ class RecipeStepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_step_params
-      params.require(:recipe_step).permit(:instructions, :prep_time, :cook_time, :recipe_id)
+      params.require(:recipe_step).permit(:instructions, :prep_time, :cook_time, :recipe_id, :number)
     end
 end
