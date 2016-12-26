@@ -17,7 +17,12 @@
 
 <p>
   <strong>Recipe:</strong>
-  <%= @recipe_step.recipe %>
+  <%= @recipe_step.recipe_id %>
+</p>
+
+<p>
+  <strong>Number</strong>
+  <%= @recipe_step.number %>
 </p>
 
 <%= link_to 'Edit', edit_recipe_step_path(@recipe_step) %> |
