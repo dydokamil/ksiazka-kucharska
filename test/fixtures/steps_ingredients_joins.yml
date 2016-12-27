@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  fk_ingredient: one
+  fk_step: one
+
+two:
+  amount: 1
+  fk_ingredient: two
+  fk_step: two

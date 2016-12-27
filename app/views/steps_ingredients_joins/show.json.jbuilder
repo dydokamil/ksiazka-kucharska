@@ -1,0 +1,1 @@
+json.partial! "steps_ingredients_joins/steps_ingredients_join", steps_ingredients_join: @steps_ingredients_join

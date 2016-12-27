@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225171331) do
+ActiveRecord::Schema.define(version: 20161227111319) do
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "recipe_steps", force: :cascade do |t|
     t.integer  "number"
@@ -28,6 +34,16 @@ ActiveRecord::Schema.define(version: 20161225171331) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "steps_ingredients_joins", force: :cascade do |t|
+    t.integer  "amount"
+    t.integer  "fk_ingredient_id"
+    t.integer  "fk_step_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["fk_ingredient_id"], name: "index_steps_ingredients_joins_on_fk_ingredient_id"
+    t.index ["fk_step_id"], name: "index_steps_ingredients_joins_on_fk_step_id"
   end
 
 end

@@ -1,0 +1,1 @@
+json.array! @steps_ingredients_joins, partial: 'steps_ingredients_joins/steps_ingredients_join', as: :steps_ingredients_join
