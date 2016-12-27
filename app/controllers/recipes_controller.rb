@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    @recipe_steps = RecipeStep.where(recipe_id: @recipe)
+    @recipe_steps = RecipeStep.where(recipe_id: @recipe).order(:number)
   end
 
   # GET /recipes/new
@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-    @recipe_steps = RecipeStep.where(recipe_id: @recipe)
+    @recipe_steps = RecipeStep.where(recipe_id: @recipe).order(:number)
   end
 
   # POST /recipes
