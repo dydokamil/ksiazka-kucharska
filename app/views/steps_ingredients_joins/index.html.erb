@@ -15,8 +15,8 @@
   <tbody>
     <% @steps_ingredients_joins.each do |steps_ingredients_join| %>
       <tr>
-        <td><%= steps_ingredients_join.recipe_step %></td>
-        <td><%= steps_ingredients_join.ingredient %></td>
+        <td><%= steps_ingredients_join.recipe_step.id %></td>
+        <td><%= steps_ingredients_join.ingredient.id %></td>
         <td><%= steps_ingredients_join.amount %></td>
         <td><%= link_to 'Show', steps_ingredients_join %></td>
         <td><%= link_to 'Edit', edit_steps_ingredients_join_path(steps_ingredients_join) %></td>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Steps Ingredients Join', new_steps_ingredients_join_path %>
+<%= link_to 'New Steps Ingredients Join', new_steps_ingredients_join_path %> |
+<%= link_to 'Recipes', recipes_path %> |
+<%= link_to 'Ingredients', ingredients_path %>

@@ -20,11 +20,15 @@ class RecipeStepsController < ApplicationController
 
   # GET /recipe_steps/1/edit
   def edit
-    @join = StepsIngredientsJoin.where(:fk_step_id => @recipe_step)
+    @join = StepsIngredientsJoin.where(:recipe_step_id => @recipe_step)
     @ingredient_ids = []
-    @join.each {|f| @ingredient_ids.append f.fk_ingredient_id }
-    @ingredientz = []
-    @ingredient_ids.each {|id| @ingredientz.append Ingredient.find(id)}
+    @join.each {|f| @ingredient_ids.append f.ingredient_id }
+    @ingredients = []
+
+    @amounts = []
+    @join.each {|f| @amounts.append f.amount }
+
+    @ingredient_ids.each {|id| @ingredients.append Ingredient.find(id)}
   end
 
   # POST /recipe_steps
