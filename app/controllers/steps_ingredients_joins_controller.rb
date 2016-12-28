@@ -69,6 +69,6 @@ class StepsIngredientsJoinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def steps_ingredients_join_params
-      params.require(:steps_ingredients_join).permit(:amount, :fk_ingredient_id, :fk_step_id)
+      params.require(:steps_ingredients_join).permit(:recipe_step_id, :ingredient_id, :amount)
     end
 end

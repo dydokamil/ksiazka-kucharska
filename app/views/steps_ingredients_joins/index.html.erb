@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Recipe step</th>
+      <th>Ingredient</th>
       <th>Amount</th>
-      <th>Fk ingredient</th>
-      <th>Fk step</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @steps_ingredients_joins.each do |steps_ingredients_join| %>
       <tr>
+        <td><%= steps_ingredients_join.recipe_step %></td>
+        <td><%= steps_ingredients_join.ingredient %></td>
         <td><%= steps_ingredients_join.amount %></td>
-        <td><%= steps_ingredients_join.fk_ingredient %></td>
-        <td><%= steps_ingredients_join.fk_step %></td>
         <td><%= link_to 'Show', steps_ingredients_join %></td>
         <td><%= link_to 'Edit', edit_steps_ingredients_join_path(steps_ingredients_join) %></td>
         <td><%= link_to 'Destroy', steps_ingredients_join, method: :delete, data: { confirm: 'Are you sure?' } %></td>

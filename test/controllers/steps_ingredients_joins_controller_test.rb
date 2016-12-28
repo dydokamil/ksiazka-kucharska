@@ -17,7 +17,7 @@ class StepsIngredientsJoinsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create steps_ingredients_join" do
     assert_difference('StepsIngredientsJoin.count') do
-      post steps_ingredients_joins_url, params: { steps_ingredients_join: { amount: @steps_ingredients_join.amount, fk_ingredient_id: @steps_ingredients_join.fk_ingredient_id, fk_step_id: @steps_ingredients_join.fk_step_id } }
+      post steps_ingredients_joins_url, params: { steps_ingredients_join: { amount: @steps_ingredients_join.amount, ingredient_id: @steps_ingredients_join.ingredient_id, recipe_step_id: @steps_ingredients_join.recipe_step_id } }
     end
 
     assert_redirected_to steps_ingredients_join_url(StepsIngredientsJoin.last)
@@ -34,7 +34,7 @@ class StepsIngredientsJoinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update steps_ingredients_join" do
-    patch steps_ingredients_join_url(@steps_ingredients_join), params: { steps_ingredients_join: { amount: @steps_ingredients_join.amount, fk_ingredient_id: @steps_ingredients_join.fk_ingredient_id, fk_step_id: @steps_ingredients_join.fk_step_id } }
+    patch steps_ingredients_join_url(@steps_ingredients_join), params: { steps_ingredients_join: { amount: @steps_ingredients_join.amount, ingredient_id: @steps_ingredients_join.ingredient_id, recipe_step_id: @steps_ingredients_join.recipe_step_id } }
     assert_redirected_to steps_ingredients_join_url(@steps_ingredients_join)
   end
 

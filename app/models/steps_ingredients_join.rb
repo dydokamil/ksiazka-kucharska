@@ -1,4 +1,4 @@
 class StepsIngredientsJoin < ApplicationRecord
-  belongs_to :fk_ingredient
-  belongs_to :fk_step
+  belongs_to :recipe_step
+  belongs_to :ingredient
 end

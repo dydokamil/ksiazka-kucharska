@@ -2,5 +2,27 @@
 
 <%= render 'form', recipe_step: @recipe_step %>
 
+<h2>Ingredients</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3">Options</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td><%= link_to 'Show', recipe_step %></td>
+        <td><%= link_to 'Edit', edit_recipe_step_path(recipe_step) %></td>
+        <td><%= link_to 'Destroy', recipe_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add ingredient', new_ingredient_path %><br>
+
 <%= link_to 'Show', @recipe_step %> |
 <%= link_to 'Back', recipe_steps_path %>

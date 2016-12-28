@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :recipe_step_id %>
+    <%= f.text_field :recipe_step_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ingredient_id %>
+    <%= f.text_field :ingredient_id %>
+  </div>
+
+  <div class="field">
     <%= f.label :amount %>
     <%= f.number_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= f.label :fk_ingredient_id %>
-    <%= f.text_field :fk_ingredient_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :fk_step_id %>
-    <%= f.text_field :fk_step_id %>
   </div>
 
   <div class="actions">

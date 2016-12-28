@@ -20,15 +20,17 @@ class RecipeStepsController < ApplicationController
 
   # GET /recipe_steps/1/edit
   def edit
+    @join = StepsIngredientsJoin.where(:fk_step_id => @recipe_step)
+    @ingredient_ids = []
+    @join.each {|f| @ingredient_ids.append f.fk_ingredient_id }
+    @ingredientz = []
+    @ingredient_ids.each {|id| @ingredientz.append Ingredient.find(id)}
   end
 
   # POST /recipe_steps
   # POST /recipe_steps.json
   def create
     @recipe_step = RecipeStep.new(recipe_step_params)
-    @all_steps = RecipeStep.where(:recipe_id => @recipe_step.recipe_id)
-    # @step_count = @all_steps.length
-    # @recipe_step.number = @step_count + 1
 
     respond_to do |format|
       if @recipe_step.save

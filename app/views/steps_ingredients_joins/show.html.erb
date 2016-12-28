@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Recipe step:</strong>
+  <%= @steps_ingredients_join.recipe_step %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @steps_ingredients_join.ingredient %>
+</p>
+
+<p>
   <strong>Amount:</strong>
   <%= @steps_ingredients_join.amount %>
-</p>
-
-<p>
-  <strong>Fk ingredient:</strong>
-  <%= @steps_ingredients_join.fk_ingredient %>
-</p>
-
-<p>
-  <strong>Fk step:</strong>
-  <%= @steps_ingredients_join.fk_step %>
 </p>
 
 <%= link_to 'Edit', edit_steps_ingredients_join_path(@steps_ingredients_join) %> |

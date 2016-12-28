@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228085537) do
+ActiveRecord::Schema.define(version: 20161228164622) do
 
   create_table "ingredients", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 20161228085537) do
   end
 
   create_table "steps_ingredients_joins", force: :cascade do |t|
+    t.integer  "recipe_step_id"
+    t.integer  "ingredient_id"
     t.integer  "amount"
-    t.integer  "fk_ingredient_id"
-    t.integer  "fk_step_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["fk_ingredient_id"], name: "index_steps_ingredients_joins_on_fk_ingredient_id"
-    t.index ["fk_step_id"], name: "index_steps_ingredients_joins_on_fk_step_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["ingredient_id"], name: "index_steps_ingredients_joins_on_ingredient_id"
+    t.index ["recipe_step_id"], name: "index_steps_ingredients_joins_on_recipe_step_id"
   end
 
 end
