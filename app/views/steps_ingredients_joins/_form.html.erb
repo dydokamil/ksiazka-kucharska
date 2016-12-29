@@ -1,32 +1,33 @@
 <%= form_for(steps_ingredients_join) do |f| %>
-  <% if steps_ingredients_join.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(steps_ingredients_join.errors.count, "error") %> prohibited this steps_ingredients_join from being saved:</h2>
+    <% if steps_ingredients_join.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(steps_ingredients_join.errors.count, "error") %> prohibited this steps_ingredients_join from
+            being saved:</h2>
 
-      <ul>
-      <% steps_ingredients_join.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% steps_ingredients_join.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :recipe_step_id %>
+      <%= f.text_field :recipe_step_id, readonly: true %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :recipe_step_id %>
-    <%= f.text_field :recipe_step_id %>
-  </div>
+    <div class="field">
+      <%= f.label :ingredient_id %>
+      <%= f.collection_select :ingredient_id, Ingredient.order(:name), :id, :name, include_blank: false %>
+    </div>
 
-  <div class="field">
-    <%= f.label :ingredient_id %>
-    <%= f.text_field :ingredient_id %>
-  </div>
+    <div class="field">
+      <%= f.label :amount %>
+      <%= f.number_field :amount %>
+    </div>
 
-  <div class="field">
-    <%= f.label :amount %>
-    <%= f.number_field :amount %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

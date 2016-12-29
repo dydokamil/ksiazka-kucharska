@@ -15,6 +15,9 @@ class StepsIngredientsJoinsController < ApplicationController
   # GET /steps_ingredients_joins/new
   def new
     @steps_ingredients_join = StepsIngredientsJoin.new
+    @steps_ingredients_join.recipe_step_id = params[:recipe_step_id]
+
+    @ingredients = Ingredient.all
   end
 
   # GET /steps_ingredients_joins/1/edit

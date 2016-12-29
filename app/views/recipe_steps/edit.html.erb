@@ -20,7 +20,7 @@
   <% end %>
   </tbody>
 </table>
-<%= link_to 'Add ingredient', new_ingredient_path %><br>
+<%= link_to 'Add ingredient', new_steps_ingredients_join_path(:recipe_step_id => @recipe_step) %><br>
 
 <%= link_to 'Show', @recipe_step %> |
 <%= link_to 'Back', recipe_steps_path %>
