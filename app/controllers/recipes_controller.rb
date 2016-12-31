@@ -11,7 +11,39 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @all_info = {}
+
     @recipe_steps = RecipeStep.where(recipe_id: @recipe).order(:number)
+
+    @amounts = []
+    @ingredients_name = []
+
+    @recipe_steps.each do |step|
+      @joins = StepsIngredientsJoin.where(recipe_step_id: step)
+      @joins.each do |join|
+        if not join.has_attribute? :amount
+          next
+        else
+          @ingredients_name.append(Ingredient.find(join.ingredient_id)[:name])
+          @amounts.append join.amount
+        end
+      end
+
+      if @ingredients_name.empty? and @amounts.empty?
+        next
+      end
+
+      @ingredients = []
+
+      @ingredients_name.zip(@amounts) do |name, amount|
+        @ingredients.append([name, amount])
+      end
+
+      @all_info[step.number] = @ingredients
+      @ingredients = []
+
+    end
+    # 2/0
   end
 
   # GET /recipes/new
@@ -65,13 +97,14 @@ class RecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def recipe_params
-      params.require(:recipe).permit(:name, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def recipe_params
+    params.require(:recipe).permit(:name, :description)
+  end
+
 end

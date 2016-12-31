@@ -14,28 +14,21 @@
 </p>
 
 <p>
-<h2>Steps</h2>
-<table>
-  <thead>
-  <tr>
-    <th>Number</th>
-    <th>Instructions</th>
-    <th>Prep time</th>
-    <th>Cook time</th>
-  </tr>
-  </thead>
+<h2>Kroki</h2>
 
-  <tbody>
-  <% @recipe_steps.each do |recipe_step| %>
-      <tr>
-        <td><%= recipe_step.number %></td>
-        <td><%= recipe_step.instructions %></td>
-        <td><%= recipe_step.prep_time %></td>
-        <td><%= recipe_step.cook_time %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<% @recipe_steps.each do |recipe_step| %>
+    <h3>Krok <%= recipe_step.number %></h3>
+    <hr>
+    <%= recipe_step.instructions %><br>
+    Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " minut" : "-" %><br>
+    Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " minut" : "-" %><br>
+    <h4>Składniki</h4>
+    <% @all_info[recipe_step.number].each do |ingredients| %>
+        <%= ingredients.second %>g
+        <%= ingredients.first %><br>
+    <% end %>
+<% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
