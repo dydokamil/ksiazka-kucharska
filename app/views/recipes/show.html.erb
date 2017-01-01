@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h2>
-  Info
+  Informacje
 </h2>
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @recipe.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Opis:</strong>
   <%= @recipe.description %>
 </p>
 
@@ -20,9 +20,12 @@
     <h3>Krok <%= recipe_step.number %></h3>
     <hr>
     <%= recipe_step.instructions %><br>
-    Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " minut" : "-" %><br>
-    Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " minut" : "-" %><br>
+    Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " min." : "-" %><br>
+    Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " min." : "-" %><br>
     <h4>Składniki</h4>
+    <% if @all_info[recipe_step.number] == nil then
+         next
+       end %>
     <% @all_info[recipe_step.number].each do |ingredients| %>
         <%= ingredients.second %>g
         <%= ingredients.first %><br>
@@ -31,5 +34,5 @@
 
 </p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Edytuj', edit_recipe_path(@recipe) %> |
+<%= link_to 'Wstecz', recipes_path %>
