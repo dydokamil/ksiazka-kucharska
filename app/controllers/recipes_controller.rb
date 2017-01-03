@@ -40,6 +40,7 @@ class RecipesController < ApplicationController
       end
 
       @all_info[step.number] = @ingredients
+      @amounts = []
       @ingredients = []
       @ingredients_name = []
 
