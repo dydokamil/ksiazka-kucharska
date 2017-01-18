@@ -10,6 +10,8 @@ class RecipeStepsController < ApplicationController
   # GET /recipe_steps/1
   # GET /recipe_steps/1.json
   def show
+    @recipe_step = RecipeStep.find(params[:id])
+    @recipe = Recipe.find(@recipe_step[:recipe_id])
   end
 
   # GET /recipe_steps/new
@@ -64,9 +66,11 @@ class RecipeStepsController < ApplicationController
   # DELETE /recipe_steps/1
   # DELETE /recipe_steps/1.json
   def destroy
+    @recipe = Recipe.find(@recipe_step[:recipe_id])
+    
     @recipe_step.destroy
     respond_to do |format|
-      format.html { redirect_to recipe_steps_url, notice: 'Recipe step was successfully destroyed.' }
+      format.html { redirect_to edit_recipe_path(@recipe), notice: 'Recipe step was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
