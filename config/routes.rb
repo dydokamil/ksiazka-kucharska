@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :steps_ingredients_joins
   resources :ingredients
   resources :recipe_steps
