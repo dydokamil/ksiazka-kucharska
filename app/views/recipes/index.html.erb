@@ -2,14 +2,16 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Przepisy</h1>
+<div class="container">
 
-<table>
+<h1 style="text-align: center">Przepisy</h1>
+
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Nazwa</th>
       <th>Opis</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opcje</th>
     </tr>
   </thead>
 
@@ -17,7 +19,8 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %></td>
-        <td><%= recipe.description.first(30) %>...</td>
+        <!--<td><%= recipe.description.first(120) %></td>-->
+        <td><%= recipe.description %></td>
         <td><%= link_to 'Pokaż', recipe %></td>
         <td><%= link_to 'Edytuj', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Usuń', recipe, method: :delete, data: { confirm: 'Na pewno?' } %></td>
@@ -26,7 +29,7 @@
   </tbody>
 </table>
 
-<br>
-<%= link_to 'Kroki przepisów', recipe_steps_path %> |
-<%= link_to 'Składniki', ingredients_path %> |
-<%= link_to 'Nowy przepis', new_recipe_path %>
+<%= link_to 'Nowy przepis', new_recipe_path, class: 'btn btn-info' %>
+<%= link_to 'Składniki', ingredients_path, class: 'btn btn-info' %>
+
+</div>
