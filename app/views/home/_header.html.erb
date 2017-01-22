@@ -11,7 +11,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Strona Główna</a></li>
+            <li><%= link_to 'Strona główna', root_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           	<% if user_signed_in? %>

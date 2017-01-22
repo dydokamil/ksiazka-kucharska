@@ -1,3 +1,7 @@
+<%= render 'home/header' %>
+
+<div class="container">
+
 <h1>Edycja przepisu</h1>
 
 <%= render 'form', recipe: @recipe %>
@@ -30,7 +34,9 @@
   </tbody>
 </table>
 
-<%= link_to 'Dodaj krok', new_recipe_step_path(:recipe => @recipe) %><br>
+<%= link_to 'Dodaj krok', new_recipe_step_path(:recipe => @recipe), class: 'btn btn-success' %>
 
-<%= link_to 'Pokaż', @recipe %> |
-<%= link_to 'Wstecz', :back %>
+<%= link_to 'Pokaż', @recipe, class: 'btn btn-info' %>
+<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+
+</div>

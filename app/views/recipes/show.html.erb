@@ -1,26 +1,21 @@
 <%= render 'home/header' %>
-
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h2>
-  Informacje
-</h2>
-<p>
-  <strong>Nazwa:</strong>
-  <%= @recipe.name %>
-</p>
+<h1 style="text-align: center">
+<%= @recipe.name %><br>
+</h1>
+<h4 style="text-align: center">
+<%= @recipe.description %>
+</h4>
+<hr>
+<h2 style="text-align: center">Kroki</h2>
 
-<p>
-  <strong>Opis:</strong>
-  <%= @recipe.description %>
-</p>
-
-<p>
-<h2>Kroki</h2>
+<ul class="list-group" style="margin: 0; margin-bottom: 10px;">
 
 <% @recipe_steps.each do |recipe_step| %>
+	<li class="list-group-item">
     <h3>Krok <%= recipe_step.number %></h3>
-    <hr>
     <%= recipe_step.instructions %><br>
     Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " min." : "-" %><br>
     Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " min." : "-" %><br>
@@ -32,9 +27,12 @@
         <%= ingredients.second %>g
         <%= ingredients.first %><br>
     <% end %>
+    </li>
 <% end %>
 
-</p>
+</ul>
 
-<%= link_to 'Edytuj', edit_recipe_path(@recipe) %> |
-<%= link_to 'Wstecz', :back %>
+<%= link_to 'Edytuj', edit_recipe_path(@recipe), class: 'btn btn-info' %>
+<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+
+</div>
