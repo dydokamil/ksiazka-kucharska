@@ -1,17 +1,17 @@
-<h1>Editing Recipe</h1>
+<h1>Edycja przepisu</h1>
 
 <%= render 'form', recipe: @recipe %>
 
 <h2>Kroki</h2>
 
-<table>
+<table class="table table-bordered">
   <thead>
   <tr>
     <th>Numer</th>
     <th>Opis</th>
     <th>Czas przygotowania</th>
     <th>Czas pieczenia</th>
-    <th colspan="4">Opcje</th>
+    <th colspan="3">Opcje</th>
   </tr>
   </thead>
 
@@ -33,4 +33,4 @@
 <%= link_to 'Dodaj krok', new_recipe_step_path(:recipe => @recipe) %><br>
 
 <%= link_to 'Pokaż', @recipe %> |
-<%= link_to 'Wstecz', recipes_path %>
+<%= link_to 'Wstecz', :back %>

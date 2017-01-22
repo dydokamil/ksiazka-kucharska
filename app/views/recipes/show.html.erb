@@ -1,3 +1,5 @@
+<%= render 'home/header' %>
+
 <p id="notice"><%= notice %></p>
 
 <h2>
@@ -35,4 +37,4 @@
 </p>
 
 <%= link_to 'Edytuj', edit_recipe_path(@recipe) %> |
-<%= link_to 'Wstecz', recipes_path %>
+<%= link_to 'Wstecz', :back %>
