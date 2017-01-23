@@ -1,5 +1,11 @@
+<%= render 'home/header' %>
+
+<div class="container">
+
 <h1>Nowy przepis</h1>
 
 <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Wstecz', recipes_path %>
+<%= link_to 'Wstecz', recipes_path, class: 'btn btn-info' %>
+
+</div>

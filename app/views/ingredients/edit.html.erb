@@ -1,6 +1,12 @@
-<h1>Editing Ingredient</h1>
+<%= render 'home/header' %>
+
+<div class="container">
+
+<h1>Edycja składnika</h1>
 
 <%= render 'form', ingredient: @ingredient %>
 
-<%= link_to 'Show', @ingredient %> |
-<%= link_to 'Back', ingredients_path %>
+<%= link_to 'Pokaż', @ingredient, class: 'btn btn-info' %>
+<%= link_to 'Wstecz', ingredients_path, class: 'btn btn-info' %>
+
+</div>
