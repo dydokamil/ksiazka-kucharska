@@ -1,14 +1,16 @@
 <%= render 'home/header'%>
 
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %>
+</p>
 
 <div class="container">
 
-<strong>Nazwa:</strong>
-<%= @ingredient.name %>
-<br>
+	<strong>Nazwa:</strong>
+	<%= @ingredient.name %>
+	<br>
 
-<%= link_to 'Edytuj', edit_ingredient_path(@ingredient), class: 'btn btn-info' %>
-<%= link_to 'Wstecz', ingredients_path, class: 'btn btn-info' %>
+	<%= link_to 'Edytuj', edit_ingredient_path(@ingredient), class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', ingredients_path, class: 'btn btn-info' %>
 
 </div>

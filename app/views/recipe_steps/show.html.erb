@@ -2,26 +2,28 @@
 
 <div class="container">
 
-<p id="notice"><%= notice %></p>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<table class="table table-bordered">
-	<thead>
-		<th>Instrukcje</th>
-		<th>Czas przygotowania</th>
-		<th>Czas gotowania</th>
-		<th>Przepis (fk)</th>
-		<th>Numer kroku</th>
-	</thead>
-	<tbody>
-		<td><%= @recipe_step.instructions %></td>
-		<td><%= @recipe_step.prep_time %></td>
-		<td><%= @recipe_step.cook_time %></td>
-		<td><%= @recipe_step.recipe_id %></td>
-		<td><%= @recipe_step.number %></td>
-	</tbody>
-</table>
+	<table class="table table-bordered">
+		<thead>
+			<th>Instrukcje</th>
+			<th>Czas przygotowania</th>
+			<th>Czas gotowania</th>
+			<th>Przepis (fk)</th>
+			<th>Numer kroku</th>
+		</thead>
+		<tbody>
+			<td><%= @recipe_step.instructions %></td>
+			<td><%= @recipe_step.prep_time %></td>
+			<td><%= @recipe_step.cook_time %></td>
+			<td><%= @recipe_step.recipe_id %></td>
+			<td><%= @recipe_step.number %></td>
+		</tbody>
+	</table>
 
-<%= link_to 'Edytuj', edit_recipe_step_path(@recipe_step), class: 'btn btn-info' %>
-<%= link_to 'Wstecz', edit_recipe_path(@recipe), class: 'btn btn-info' %>
+	<%= link_to 'Edytuj', edit_recipe_step_path(@recipe_step), class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', edit_recipe_path(@recipe), class: 'btn btn-info' %>
 
 </div>

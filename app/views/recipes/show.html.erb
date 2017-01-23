@@ -1,38 +1,42 @@
 <%= render 'home/header' %>
 <div class="container">
-<p id="notice"><%= notice %></p>
+	<p id="notice">
+		<%= notice %>
+	</p>
 
-<h1 style="text-align: center">
-<%= @recipe.name %><br>
-</h1>
-<h4 style="text-align: center">
-<%= @recipe.description %>
-</h4>
-<hr>
-<h2 style="text-align: center">Kroki</h2>
+	<h1 style="text-align: center"> <%= @recipe.name %>
+	<br>
+	</h1>
+	<h4 style="text-align: center"> <%= @recipe.description %> </h4>
+	<hr>
+	<h2 style="text-align: center">Kroki</h2>
 
-<ul class="list-group" style="margin: 0; margin-bottom: 10px;">
+	<ul class="list-group" style="margin: 0; margin-bottom: 10px;">
 
-<% @recipe_steps.each do |recipe_step| %>
-	<li class="list-group-item">
-    <h3>Krok <%= recipe_step.number %></h3>
-    <%= recipe_step.instructions %><br>
-    Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " min." : "-" %><br>
-    Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " min." : "-" %><br>
-    <h4>Składniki</h4>
-    <% if @all_info[recipe_step.number] == nil then
-         next
-       end %>
-    <% @all_info[recipe_step.number].each do |ingredients| %>
-        <%= ingredients.second %>g
-        <%= ingredients.first %><br>
-    <% end %>
-    </li>
-<% end %>
+		<% @recipe_steps.each do |recipe_step| %>
+		<li class="list-group-item">
+			<h3>Krok <%= recipe_step.number %></h3>
+			<%= recipe_step.instructions %>
+			<br>
+			Czas przygotowania składników: <%= recipe_step.prep_time ? recipe_step.prep_time.to_s + " min." : "-" %>
+			<br>
+			Czas gotowania: <%= recipe_step.cook_time ? recipe_step.cook_time.to_s + " min." : "-" %>
+			<br>
+			<h4>Składniki</h4>
+			<% if @all_info[recipe_step.number] == nil then
+        next
+        end %>
+			<% @all_info[recipe_step.number].each do |ingredients| %>
+			<%= ingredients.second %>g
+			<%= ingredients.first %>
+			<br>
+			<% end %>
+		</li>
+		<% end %>
 
-</ul>
+	</ul>
 
-<%= link_to 'Edytuj', edit_recipe_path(@recipe), class: 'btn btn-info' %>
-<%= link_to 'Wstecz', recipes_path, class: 'btn btn-info' %>
+	<%= link_to 'Edytuj', edit_recipe_path(@recipe), class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', recipes_path, class: 'btn btn-info' %>
 
 </div>

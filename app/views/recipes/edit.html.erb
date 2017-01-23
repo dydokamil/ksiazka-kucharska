@@ -2,41 +2,41 @@
 
 <div class="container">
 
-<h1>Edycja przepisu</h1>
+	<h1>Edycja przepisu</h1>
 
-<%= render 'form', recipe: @recipe %>
+	<%= render 'form', recipe: @recipe %>
 
-<h2>Kroki</h2>
+	<h2>Kroki</h2>
 
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>Numer</th>
-    <th>Opis</th>
-    <th>Czas przygotowania</th>
-    <th>Czas pieczenia</th>
-    <th colspan="3">Opcje</th>
-  </tr>
-  </thead>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Numer</th>
+				<th>Opis</th>
+				<th>Czas przygotowania</th>
+				<th>Czas pieczenia</th>
+				<th colspan="3">Opcje</th>
+			</tr>
+		</thead>
 
-  <tbody>
-  <% @recipe_steps.each do |recipe_step| %>
-      <tr>
-        <td><%= recipe_step.number %></td>
-        <td><%= recipe_step.instructions %></td>
-        <td><%= recipe_step.prep_time %></td>
-        <td><%= recipe_step.cook_time %></td>
-        <td><%= link_to 'Pokaż', recipe_step %></td>
-        <td><%= link_to 'Edytuj', edit_recipe_step_path(recipe_step) %></td>
-        <td><%= link_to 'Usuń', recipe_step, method: :delete, data: { confirm: 'Na pewno?' } %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+		<tbody>
+			<% @recipe_steps.each do |recipe_step| %>
+			<tr>
+				<td><%= recipe_step.number %></td>
+				<td><%= recipe_step.instructions %></td>
+				<td><%= recipe_step.prep_time %></td>
+				<td><%= recipe_step.cook_time %></td>
+				<td><%= link_to 'Pokaż', recipe_step %></td>
+				<td><%= link_to 'Edytuj', edit_recipe_step_path(recipe_step) %></td>
+				<td><%= link_to 'Usuń', recipe_step, method: :delete, data: { confirm: 'Na pewno?' } %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<%= link_to 'Dodaj krok', new_recipe_step_path(:recipe => @recipe), class: 'btn btn-success' %>
+	<%= link_to 'Dodaj krok', new_recipe_step_path(:recipe => @recipe), class: 'btn btn-success' %>
 
-<%= link_to 'Pokaż', @recipe, class: 'btn btn-info' %>
-<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+	<%= link_to 'Pokaż', @recipe, class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
 
 </div>

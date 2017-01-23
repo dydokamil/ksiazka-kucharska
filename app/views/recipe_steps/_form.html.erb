@@ -1,42 +1,44 @@
 <%= form_for(recipe_step) do |f| %>
-  <% if recipe_step.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe_step.errors.count, "error") %> prohibited this recipe_step from being saved:</h2>
+<% if recipe_step.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(recipe_step.errors.count, "error") %> prohibited this recipe_step from being saved:</h2>
 
-      <ul>
-      <% recipe_step.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<ul>
+		<% recipe_step.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
 
-  <div class="form-group">
-    <%= f.label "Instrukcje" %>
-    <%= f.text_area :instructions, class: 'form-control' %>
-  </div>
+<div class="form-group">
+	<%= f.label "Instrukcje" %>
+	<%= f.text_area :instructions, class: 'form-control' %>
+</div>
 
-  <div class="form-group">
-    <%= f.label 'Czas przygotowania' %>
-    <%= f.number_field :prep_time, class: 'form-control' %>
-  </div>
+<div class="form-group">
+	<%= f.label 'Czas przygotowania' %>
+	<%= f.number_field :prep_time, class: 'form-control' %>
+</div>
 
-  <div class="form-group">
-    <%= f.label "Czas pieczenia" %>
-    <%= f.number_field :cook_time, class: 'form-control' %>
-  </div>
+<div class="form-group">
+	<%= f.label "Czas pieczenia" %>
+	<%= f.number_field :cook_time, class: 'form-control' %>
+</div>
 
-  <div class="form-group">
-    <%= f.label 'fk_przepis' %>
-    <%= f.text_field :recipe_id, :readonly => true, class: 'form-control' %>
-  </div>
+<div class="form-group">
+	<%= f.label 'fk_przepis' %>
+	<%= f.text_field :recipe_id, :readonly => true, class: 'form-control' %>
+</div>
 
-    <div class="form-group">
-      <%= f.label 'Numer kroku' %>
-      <%= f.text_field :number, class: 'form-control' %>
-    </div>
+<div class="form-group">
+	<%= f.label 'Numer kroku' %>
+	<%= f.text_field :number, class: 'form-control' %>
+</div>
 
-  <div class="actions">
-    <%= f.submit 'Prześlij', class: 'btn btn-success' %>
-  </div>
+<div class="actions">
+	<%= f.submit 'Prześlij', class: 'btn btn-success' %>
+</div>
 <% end %>

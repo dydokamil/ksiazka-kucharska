@@ -2,31 +2,31 @@
 
 <div class="container">
 
-<h1>Edycja kroku</h1>
+	<h1>Edycja kroku</h1>
 
-<%= render 'form', recipe_step: @recipe_step %>
+	<%= render 'form', recipe_step: @recipe_step %>
 
-<h2>Składniki</h2>
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>Ilość (g)</th>
-    <th>Składnik</th>
-  </tr>
-  </thead>
+	<h2>Składniki</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Ilość (g)</th>
+				<th>Składnik</th>
+			</tr>
+		</thead>
 
-  <tbody>
-  <% @ingredients.zip(@amounts).each do |ingredient, amount| %>
-      <tr>
-        <td><%= amount %></td>
-        <td><%= ingredient.name %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-<%= link_to 'Dodaj składnik', new_steps_ingredients_join_path(:recipe_step_id => @recipe_step), class: 'btn btn-success' %>
+		<tbody>
+			<% @ingredients.zip(@amounts).each do |ingredient, amount| %>
+			<tr>
+				<td><%= amount %></td>
+				<td><%= ingredient.name %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= link_to 'Dodaj składnik', new_steps_ingredients_join_path(:recipe_step_id => @recipe_step), class: 'btn btn-success' %>
 
-<%= link_to 'Pokaż', @recipe_step, class: 'btn btn-info' %>
-<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+	<%= link_to 'Pokaż', @recipe_step, class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
 
 </div>
