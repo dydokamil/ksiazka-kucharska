@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'homepage/index'
+
   devise_for :users
   resources :steps_ingredients_joins
   resources :ingredients
@@ -6,5 +8,6 @@ Rails.application.routes.draw do
   resources :recipes
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'recipes#index'
+  # root 'recipes#index'
+  root 'homepage#index'
 end
