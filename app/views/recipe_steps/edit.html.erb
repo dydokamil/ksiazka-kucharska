@@ -1,13 +1,17 @@
-<h1>Editing Recipe Step</h1>
+<%= render 'home/header' %>
+
+<div class="container">
+
+<h1>Edycja kroku</h1>
 
 <%= render 'form', recipe_step: @recipe_step %>
 
-<h2>Ingredients</h2>
-<table>
+<h2>Składniki</h2>
+<table class="table table-bordered">
   <thead>
   <tr>
-    <th>Amount</th>
-    <th>Ingredient</th>
+    <th>Ilość (g)</th>
+    <th>Składnik</th>
   </tr>
   </thead>
 
@@ -20,7 +24,9 @@
   <% end %>
   </tbody>
 </table>
-<%= link_to 'Add ingredient', new_steps_ingredients_join_path(:recipe_step_id => @recipe_step) %><br>
+<%= link_to 'Dodaj składnik', new_steps_ingredients_join_path(:recipe_step_id => @recipe_step), class: 'btn btn-success' %>
 
-<%= link_to 'Show', @recipe_step %> |
-<%= link_to 'Back', recipe_steps_path %>
+<%= link_to 'Pokaż', @recipe_step, class: 'btn btn-info' %>
+<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+
+</div>

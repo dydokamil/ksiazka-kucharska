@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :instructions %>
-    <%= f.text_area :instructions %>
+  <div class="form-group">
+    <%= f.label "Instrukcje" %>
+    <%= f.text_area :instructions, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :prep_time %>
-    <%= f.number_field :prep_time %>
+  <div class="form-group">
+    <%= f.label 'Czas przygotowania' %>
+    <%= f.number_field :prep_time, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :cook_time %>
-    <%= f.number_field :cook_time %>
+  <div class="form-group">
+    <%= f.label "Czas pieczenia" %>
+    <%= f.number_field :cook_time, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= f.label :recipe_id %>
-    <%= f.text_field :recipe_id, :readonly => true %>
+  <div class="form-group">
+    <%= f.label 'fk_przepis' %>
+    <%= f.text_field :recipe_id, :readonly => true, class: 'form-control' %>
   </div>
 
-    <div class="field">
-      <%= f.label :number %>
-      <%= f.text_field :number %>
+    <div class="form-group">
+      <%= f.label 'Numer kroku' %>
+      <%= f.text_field :number, class: 'form-control' %>
     </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Prześlij', class: 'btn btn-success' %>
   </div>
 <% end %>
