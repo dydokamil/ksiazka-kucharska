@@ -13,32 +13,104 @@
 	.jumbotext {
 		color: #fff;
 	}
-	h2, h3, h4, h5, h1 {
+	.h1w, .h2w, .h3w, .h4w, .h5w {
 		text-align: center;
 		color: #fff;
 	}
+
+	.vcenter {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.img-circle {
+		border-radius: 50%;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	img {
+		width: 200px;
+		height: 200px;
+	}
+
 </style>
 
 <body>
 	<div class='jumbotron background'>
 		<div class="container">
-			<h1 style="color: #fff">Internetowa książka kucharska</h1>
-			<h2>Zarządzaj swoimi ulubionymi przepisami online</h2>
-			<h3>Stwórz własną książkę kucharską poprzez gromadzenie przepisów ze stron internetowych w sieci używając funkcji importowania.</h3>
-			<h4>Wypróbuj za darmo!</h4>
+			<h1 class="h1w" style="color: #fff">Internetowa książka kucharska</h1>
+			<h2 class="h2w">Zarządzaj swoimi ulubionymi przepisami online</h2>
+			<h3 class="h3w">Stwórz własną książkę kucharską poprzez gromadzenie przepisów ze stron internetowych w sieci.</h3>
+			<h4 class="h4w">Wypróbuj za darmo!</h4>
 		</div>
 	</div>
 
-	<div class="jumbotron">
+	<div class="jumbotron" style="background-color: #fff">
 		<div class="container">
-			<div class='col-lg-6'>
-				<p style="font-size: 2em;">
-					Dodawaj nowe przepisy
-				</p>
+			<div class="row" align="center">
+				<div class='col-lg-3 vcenter'>
+					<i style="font-size: 10em;" class="glyphicon glyphicon-plus"></i>
+					<h2>Dodawaj</h2>
+				</div>
+
+				<div class='col-lg-3 vcenter'>
+					<i style="font-size: 10em;" class="glyphicon glyphicon-book"></i>
+					<h2>Przeglądaj</h2>
+				</div>
+
+				<div class='col-lg-3 vcenter'>
+					<i style="font-size: 10em;" class="glyphicon glyphicon-pencil"></i>
+					<h2>Edytuj</h2>
+				</div>
+
+				<div class='col-lg-3 vcenter'>
+					<i style="font-size: 10em;" class="glyphicon glyphicon-remove"></i>
+					<h2>Usuwaj</h2>
+				</div>
+
 			</div>
-			<div class='col-lg-6' align="center">
-				<span style="font-size: 10em;" class="glyphicon glyphicon-plus"> </span>
+		</div>
+	</div>
+
+	<div class="jumbotron" style="padding-top: 5em">
+		<div class="container">
+			<div class="row align-center">
+				<div class="col-md-3">
+					<img class="img-circle" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="">
+					<div>
+						<h4>Jan Kowalski</h4>
+						<span>Projektant Web</span>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<img class="img-circle" src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="">
+					<div>
+						<h4>Jan Nowak</h4>
+						<span>Programista Rails</span>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<img class="img-circle" src="https://corevaluesoftware.com/userfiles/images/website/author_placeholder_female.png" alt="">
+					<div>
+						<h4>Joanna Nowak</h4>
+						<span>Projektant Web</span>
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<img class="img-circle" src="https://corevaluesoftware.com/userfiles/images/website/author_placeholder_female.png" alt="">
+					<div>
+						<h4>Joanna Kowalska</h4>
+						<span>Programista Rails</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
