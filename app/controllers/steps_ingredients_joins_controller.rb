@@ -31,7 +31,7 @@ class StepsIngredientsJoinsController < ApplicationController
 
     respond_to do |format|
       if @steps_ingredients_join.save
-        format.html { redirect_to @steps_ingredients_join, notice: 'Steps ingredients join was successfully created.' }
+        format.html { redirect_to :back, notice: 'Steps ingredients join was successfully created.' }
         format.json { render :show, status: :created, location: @steps_ingredients_join }
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class StepsIngredientsJoinsController < ApplicationController
   def destroy
     @steps_ingredients_join.destroy
     respond_to do |format|
-      format.html { redirect_to steps_ingredients_joins_url, notice: 'Steps ingredients join was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Steps ingredients join was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

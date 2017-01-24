@@ -12,14 +12,16 @@
 			<tr>
 				<th>Ilość (g)</th>
 				<th>Składnik</th>
+				<th>Opcje</th>
 			</tr>
 		</thead>
 
 		<tbody>
-			<% @ingredients.zip(@amounts).each do |ingredient, amount| %>
+			<% @ingredients.zip(@amounts, @join).each do |ingredient, amount, join| %>
 			<tr>
 				<td><%= amount %></td>
 				<td><%= ingredient.name %></td>
+				<td><%= link_to 'Usuń', join, method: :delete, data: {confirm: "Na pewno?"} %></td>
 			</tr>
 			<% end %>
 		</tbody>
