@@ -41,6 +41,10 @@
 		padding-top: 5em;
 	}
 
+	.form-group {//
+		margin-bottom: 1em;
+	}
+
 </style>
 
 <body>
@@ -80,7 +84,7 @@
 		</div>
 	</div>
 
-	<div class="jumbotron team" style="padding-top: 5em">
+	<div class="jumbotron" style="padding-top: 5em; padding-bottom: 11em;">
 		<div class="container">
 			<h1 class="text-center" style="padding-bottom: 1em">Nasz zespół</h1>
 			<div class="row align-center">
@@ -107,9 +111,35 @@
 						<span>Projektantka Web</span>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
+
+	<div class="jumbotron" style="background-color: #fff; padding-top: 5em; padding-bottom: 7em;">
+		<div class="container">
+			<h1 class="text-center">Kontakt</h1>
+			<div class="form-group">
+				<label for="imie">Imię</label>
+				<input id="imie" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="imie">Nazwisko</label>
+				<input id="nazwisko" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="imie">E-mail</label>
+				<input id="email" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="imie">Treść</label>
+				<textarea id="tresc" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<input class="btn btn-success" type="submit" />
+			</div>
+		</div>
+	</div>
+
 </body>
 
