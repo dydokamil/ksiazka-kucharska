@@ -6,6 +6,6 @@
 
 	<%= render 'form', steps_ingredients_join: @steps_ingredients_join %>
 
-	<%= link_to 'Wstecz', :back, class: 'btn btn-info' %>
+	<%= link_to 'Wstecz', recipe_step_path(@steps_ingredients_join.recipe_step_id), class: 'btn btn-info' %>
 
 </div>
